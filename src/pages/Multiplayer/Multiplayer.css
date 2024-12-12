@@ -129,7 +129,7 @@
 }
 
 .mp-avatar:hover {
-  transform: rotate(360deg);
+  transform: rotate(0deg);
 }
 
 .mp-username-input {
