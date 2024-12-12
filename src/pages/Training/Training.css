@@ -241,3 +241,69 @@ body {
     max-width: 400px;
   }
 }
+
+@media (max-width: 768px) {
+  .tg-training-title {
+    font-size: 2.5rem;
+  }
+
+  .tg-training-subtitle {
+    font-size: 1rem;
+  }
+
+  .tg-module-card {
+    padding: 1.5rem;
+  }
+
+  .tg-module-icon {
+    font-size: 3rem;
+  }
+
+  .tg-module-title {
+    font-size: 1.2rem;
+  }
+
+  .tg-module-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .tg-training-content {
+    padding: 1rem;
+  }
+
+  .tg-training-title {
+    font-size: 2rem;
+  }
+
+  .tg-training-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .tg-modules-list {
+    gap: 1rem;
+  }
+
+  .tg-module-card {
+    padding: 1rem;
+    width: 90%;
+  }
+
+  .tg-module-icon {
+    font-size: 2.5rem;
+  }
+
+  .tg-module-title {
+    font-size: 1rem;
+  }
+
+  .tg-module-description {
+    font-size: 0.8rem;
+  }
+
+  .tg-start-training-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
