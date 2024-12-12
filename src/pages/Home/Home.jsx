@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import forgex_logo from '../../assets/forgex_logo.png';
 
 const Home = () => {
-  const navigate = useNavigate();
   const [menuHovered, setMenuHovered] = useState(null);
 
   // Game menu options
@@ -12,44 +11,28 @@ const Home = () => {
     { 
       id: 'multiplayer', 
       label: 'Multiplayer', 
-      description: 'Join global strategic battles' 
+      description: 'Join global strategic battles', 
+      path: '/multiplayer' 
     },
     { 
       id: 'campaign', 
       label: 'Campaign', 
-      description: 'Embark on epic AI-driven missions' 
+      description: 'Embark on epic AI-driven missions', 
+      path: '/campaign' 
     },
     { 
       id: 'training', 
       label: 'Training Ground', 
-      description: 'Sharpen your strategic skills' 
+      description: 'Sharpen your strategic skills', 
+      path: '/training' 
     },
     { 
       id: 'settings', 
       label: 'Settings', 
-      description: 'Customize your ForgeX experience' 
+      description: 'Customize your ForgeX experience', 
+      path: '/settings' 
     }
   ];
-
-  // Handle menu item selection
-  const handleMenuSelect = (option) => {
-    switch(option) {
-      case 'multiplayer':
-        navigate('/multiplayer');
-        break;
-      case 'campaign':
-        navigate('/campaign');
-        break;
-      case 'training':
-        navigate('/training');
-        break;
-      case 'settings':
-        navigate('/settings');
-        break;
-      default:
-        break;
-    }
-  };
 
   return (
     <div className="game-home-container">
@@ -69,10 +52,10 @@ const Home = () => {
         {/* Game Menu */}
         <div className="game-home-menu">
           {menuOptions.map((option) => (
-            <div 
+            <Link 
+              to={option.path}
               key={option.id}
               className={`game-menu-item ${menuHovered === option.id ? 'hovered' : ''}`}
-              onClick={() => handleMenuSelect(option.id)}
               onMouseEnter={() => setMenuHovered(option.id)}
               onMouseLeave={() => setMenuHovered(null)}
             >
@@ -80,14 +63,9 @@ const Home = () => {
               <span className="menu-item-description">
                 {option.description}
               </span>
-            </div>
+            </Link>
           ))}
         </div>
-
-        {/* Version and Additional Info */}
-        {/* <div className="game-home-footer">
-          <span>ForgeX v1.0.0 | Build 2024.1</span>
-        </div> */}
       </div>
     </div>
   );
