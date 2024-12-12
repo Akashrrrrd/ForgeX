@@ -1,0 +1,257 @@
+/* Main Container */
+.rd-container {
+    background: linear-gradient(135deg, #0f1020, #1a2b3c);
+    color: #e0e0e0;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Orbitron', 'Arial', sans-serif;
+  }
+  
+  /* Header */
+  .rd-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .rd-title {
+    font-size: 3.5rem;
+    color: #00b4d8;
+    text-shadow: 0 0 15px #00b4d8, 0 0 30px #38b6ff;
+    letter-spacing: 2px;
+  }
+  
+  .rd-subtitle {
+    font-size: 1.3rem;
+    color: #80deea;
+    opacity: 0.8;
+  }
+  
+  /* Game Progress Overview */
+  .rd-game-progress {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #00b4d8;
+  }
+  
+  .rd-progress-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #80deea;
+  }
+  
+  .rd-progress-stat span {
+    font-weight: bold;
+    color: #00b4d8;
+  }
+  
+  /* Features List */
+  .rd-features-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .rd-feature-card {
+    background: rgba(0, 180, 216, 0.1);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 280px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .rd-feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: all 0.6s;
+  }
+  
+  .rd-feature-card:hover::before {
+    left: 100%;
+  }
+  
+  .rd-feature-card:hover {
+    transform: scale(1.05);
+    border: 2px solid #00b4d8;
+    background: rgba(0, 180, 216, 0.2);
+  }
+  
+  .rd-feature-title {
+    font-size: 1.7rem;
+    color: #00b4d8;
+    margin-bottom: 0.5rem;
+  }
+  
+  .rd-feature-description {
+    font-size: 1rem;
+    color: #80deea;
+  }
+  
+  .rd-selected {
+    background: rgba(0, 180, 216, 0.3);
+    border: 2px solid #38b6ff;
+  }
+  
+  /* Feature Details */
+  .rd-feature-details {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 2px solid #00b4d8;
+    text-align: center;
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .rd-detail-title {
+    font-size: 2.5rem;
+    color: #00b4d8;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+  }
+  
+  .rd-detail-description {
+    font-size: 1.3rem;
+    color: #80deea;
+    margin-bottom: 1.5rem;
+  }
+  
+  .rd-feature-metadata {
+    background: rgba(0, 180, 216, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .rd-metadata-item {
+    margin-bottom: 0.75rem;
+    color: #80deea;
+  }
+  
+  .rd-metadata-item strong {
+    color: #00b4d8;
+    margin-right: 0.5rem;
+  }
+  
+  .rd-progress-description {
+    font-style: italic;
+    color: #4dd0e1;
+    margin-top: 1rem;
+  }
+  
+  .rd-start-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #00b4d8;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  
+  .rd-start-button:hover {
+    background: #38b6ff;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 180, 216, 0.5);
+  }
+  
+  /* Background Animation */
+  .rd-background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .rd-star {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    filter: blur(2px);
+    animation: float 6s infinite ease-in-out, twinkle 3s infinite alternate;
+  }
+  
+  .rd-star-1 {
+    width: 150px;
+    height: 150px;
+    top: 10%;
+    left: 20%;
+  }
+  
+  .rd-star-2 {
+    width: 200px;
+    height: 200px;
+    top: 40%;
+    left: 70%;
+  }
+  
+  .rd-star-3 {
+    width: 120px;
+    height: 120px;
+    top: 70%;
+    left: 30%;
+  }
+  
+  .rd-glow {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #00b4d8 0%, transparent 70%);
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  @keyframes twinkle {
+    0% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

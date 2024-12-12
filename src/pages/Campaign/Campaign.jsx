@@ -1,6 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Gamepad2, Target, ShieldCheck, Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for routing
 import "./Campaign.css";
 
 const Campaign = () => {
@@ -10,14 +11,16 @@ const Campaign = () => {
     y: 50,
   });
   const containerRef = useRef(null);
+  const navigate = useNavigate(); // Use the navigation hook
 
-  // Sample campaign missions with more detailed information
+  // Sample campaign missions with detailed information
   const missions = [
     {
       id: 1,
       name: "The Rising Dawn",
       description: "Defeat rogue AI and reclaim lost territories.",
       difficulty: "Medium",
+      link: "/missions/rising-dawn", // Mission page link
       icon: <Gamepad2 size={48} className="cn-mission-icon" />,
       primaryColor: "#4A90E2",
       secondaryColor: "#1A2980",
@@ -28,6 +31,7 @@ const Campaign = () => {
       description:
         "Infiltrate enemy strongholds and secure critical resources.",
       difficulty: "Hard",
+      link: "/missions/thunderbolt", // Mission page link
       icon: <Target size={48} className="cn-mission-icon" />,
       primaryColor: "#FF6B6B",
       secondaryColor: "#8E2DE2",
@@ -37,6 +41,7 @@ const Campaign = () => {
       name: "Guardian Protocol",
       description: "Protect the ancient AI artifact from intruder intrusions.",
       difficulty: "Easy",
+      link: "/missions/guardian-protocol", // Mission page link
       icon: <ShieldCheck size={48} className="cn-mission-icon" />,
       primaryColor: "#2BDE73",
       secondaryColor: "#4A90E2",
@@ -53,20 +58,15 @@ const Campaign = () => {
     }
   };
 
-  // Start mission handler with more interactive feedback
+  // Navigate to the selected mission's page
   const handleStartMission = (mission) => {
     const audio = new Audio("/assets/mission-start.mp3");
     audio.play();
 
-    // Simulating mission start with a loading sequence
-    const loadingScreen = document.createElement("div");
-    loadingScreen.className = "cn-loading-overlay";
-    document.body.appendChild(loadingScreen);
-
+    // Add a short delay for better user experience
     setTimeout(() => {
-      document.body.removeChild(loadingScreen);
-      alert(`Launching Mission: ${mission.name}`);
-    }, 2000);
+      navigate(mission.link); // Navigate to the specific mission page
+    }, 1000);
   };
 
   return (
