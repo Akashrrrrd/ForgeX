@@ -85,9 +85,9 @@ const Home = () => {
         </div>
 
         {/* Version and Additional Info */}
-        <div className="game-home-footer">
+        {/* <div className="game-home-footer">
           <span>ForgeX v1.0.0 | Build 2024.1</span>
-        </div>
+        </div> */}
       </div>
     </div>
   );
