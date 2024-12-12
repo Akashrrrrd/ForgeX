@@ -13,7 +13,7 @@ import {
   Shield,
   Zap,
 } from "lucide-react";
-import './Multiplayer.css';
+import "./Multiplayer.css";
 
 const Multiplayer = () => {
   const [username, setUsername] = useState("");
